@@ -1,5 +1,17 @@
+//function to set name
+var getPlayerName = function () {
+  var name = "";
+
+  while (name === "" || name === null) {
+    name = prompt("What is your robot's name?");
+  }
+  
+  console.log("'Your robot\'s name is'", name)
+  return name;
+}
+
 var playerInfo = {
-  name: window.prompt("What is your robot's name?"),
+  name: getPlayerName(),
   health: 100,
   attack: 10,
   money: 10,
@@ -183,7 +195,7 @@ var startGame = function () {
       pickedEnemyObject.health = randomNumber(40, 60);
   
       //user debugger to pause script from running and check what's going on
-      debugger;
+      // debugger;
   
       // call fight function with enemy-robot
       fight(pickedEnemyObject);
